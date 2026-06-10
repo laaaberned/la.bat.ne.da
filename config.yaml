@@ -1,0 +1,101 @@
+# ART.WE.ED.IT Configuration
+
+project:
+  name: "ART.WE.ED.IT"
+  version: "1.0.0"
+  description: "AI-powered music video editor"
+
+audio_analysis:
+  # BPM detection parameters
+  hop_length: 512
+  n_fft: 2048
+  sr: 22050  # Sample rate
+  
+  # Beat tracking
+  use_librosa_beat: true
+  units: "frames"
+  
+  # Onset detection
+  onset_strength_method: "default"
+  backtrack: true
+
+visual_analysis:
+  # Video processing
+  sample_rate: 2  # Frames to sample per second
+  target_fps: 30
+  
+  # Models
+  use_pretrained_models: true
+  model_device: "cuda"  # cuda or cpu
+  
+  # Analysis parameters
+  shot_scale_detection: true
+  camera_movement_detection: true
+  lighting_analysis: true
+  composition_analysis: true
+  scene_transition_detection: true
+
+clip_selector:
+  # Repetition avoidance
+  max_consecutive_same_shot_scale: 2
+  max_consecutive_same_mood: 3
+  
+  # Variety parameters
+  prefer_composition_variety: true
+  prefer_lighting_variety: true
+  prefer_movement_variety: true
+  
+  # Weighting for selection
+  weights:
+    composition: 0.3
+    movement: 0.25
+    lighting: 0.25
+    mood: 0.2
+
+timeline_generator:
+  # Timeline configuration
+  transition_duration_ms: 500
+  min_clip_duration_ms: 500
+  max_clip_duration_ms: 8000
+  
+  # Beat synchronization
+  sync_to_beats: true
+  allow_beat_division: true  # Allow clips on half-beats, quarter-beats
+  
+  # Scene changes
+  scene_change_on_beat: true
+  allow_lyric_based_changes: true
+
+export:
+  # Export formats
+  formats:
+    - json
+    - csv
+  
+  # JSON export
+  json_indent: 2
+  include_analysis_history: true
+  
+  # CSV export
+  csv_delimiter: ","
+  include_metadata: true
+  include_parameters: true
+
+database:
+  # SQLite database for tracking analyses
+  path: "data/analysis_history.db"
+  auto_migrate: true
+  
+  # Retention
+  keep_history_days: 365
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  log_file: "logs/art_we_ed_it.log"
+
+data:
+  clips_directory: "data/clips/"
+  audio_directory: "data/audio/"
+  export_directory: "data/exports/"
+  models_directory: "models/"

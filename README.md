@@ -1,117 +1,117 @@
-# 🎬 BEAT SYNC FUNC - AI-Powered Music Video Creator
+# ART.WE.ED.IT - AI Music Video Editor
 
-> *Automatically generate cinematic music videos from a clip pool, perfectly synced to the beat.*
+**Professional AI-powered music video editing with automatic beat synchronization and intelligent clip selection.**
 
-## 🎯 Overview
+## Overview
 
-BEAT SYNC FUNC is a state-of-the-art AI system that transforms raw video clips and music into professionally edited music videos. It analyzes audio signals (turntablism, beat patterns, spectral content) and intelligently selects, times, and applies visual effects to create cohesive, dynamic videos.
+ART.WE.ED.IT combines:
+- **Beat Sync**: Automatically synchronize video clips to music BPM and rhythm
+- **Visual Analysis**: AI-powered extraction of shot composition, camera movement, lighting, and mood
+- **Smart Selection**: Intelligent clip selection logic to avoid repetition and ensure creative flow
+- **Timeline Generation**: Automatic beat-synced timeline creation from music and video clips
+- **Export**: Comprehensive metadata export in JSON/CSV formats for further editing
 
-### Key Features
+## Features
 
-- **🎵 Beat-Sync Technology**: Clips automatically sync to the rhythm and beat of your music
-- **🧠 Semantic Intelligence**: Uses metadata and AI to understand song context and select appropriate clips
-- **✨ Advanced Effects**: Smooth blending, time warps, zoom effects, visual scratching
-- **📺 Format Preservation**: Maintains 16:9 aspect ratio without letterboxing
-- **🔄 Smart Versioning**: Automatic version incrementing without overwriting originals
-- **⚡ Hardware Optimized**: Supports modern systems and legacy hardware (Pentium III+)
-- **🎓 Learnable**: Creative logic adapts based on patterns and input
+### Core Capabilities
 
-## 🏗️ Architecture
+1. **Audio Analysis**
+   - BPM detection from audio files
+   - Beat position identification
+   - Lyric timing extraction
+   - Audio feature analysis (energy, spectral characteristics)
 
-```
-BEAT SYNC FUNC
-├── 🎥 Video Layer
-│   ├── Video I/O & Preprocessing
-│   ├── Clip Detection & Analysis
-│   └── Scene Recognition
-├── 🔊 Audio Layer
-│   ├── Beat Detection & Tracking
-│   ├── Spectral Analysis
-│   ├── Turntablism Recognition
-│   └── Scratch Detection
-├── ✂️ Cutter/Director Engine
-│   ├── Timeline Generation
-│   ├── Cut Pattern Matching
-│   ├── Segment Selection Logic
-│   └── Dynamic Markers
-└── 🎨 SVFX (Special Visual Effects)
-    ├── Transitions & Blending
-    ├── Time Warps
-    ├── Zoom Effects
-    ├── Visual Scratching
-    └── Effect Chain Rendering
-```
+2. **Visual Analysis**
+   - Shot scale detection (wide, medium, close-up)
+   - Camera movement analysis
+   - Lighting & mood classification
+   - Composition evaluation
+   - Scene transitions detection
 
-## 📦 Project Structure
+3. **Clip Management**
+   - Metadata extraction for all video clips
+   - Historical tracking of analyses (date, parameters, clip ID)
+   - Clip library organization
+
+4. **Smart Timeline Generation**
+   - Beat-synced clip sequencing
+   - Repetition avoidance with creative logic
+   - Thematic coherence maintenance
+   - Shot composition flow optimization
+
+5. **Export Functionality**
+   - JSON export: Detailed metadata with all analysis parameters
+   - CSV export: Tabular format for spreadsheet review
+   - Timeline export: Editable project format
+   - Analysis history: Review and re-run with different contexts
+
+## Project Structure
 
 ```
 la.bat.ne.da/
-├── beat_sync_func/
-│   ├── __init__.py
-│   ├── core/
-│   │   ├── pipeline.py           # Main orchestration
-│   │   └── config.py             # Configuration management
-│   ├── video/
-│   │   ├── loader.py             # Video I/O
-│   │   ├── analyzer.py           # Scene & motion analysis
-│   │   └── processor.py          # Video transformations
-│   ├── audio/
-│   │   ├── loader.py             # Audio I/O
-│   │   ├── beat_detector.py      # Beat tracking
-│   │   ├── spectral.py           # Spectral analysis
-│   │   └── turntablism.py        # Scratch/turntablism detection
-│   ├── cutter/
-│   │   ├── director.py           # Cutting logic & timing
-│   │   ├── patterns.py           # Cut patterns library
-│   │   └── timeline.py           # Timeline generation
-│   ├── effects/
-│   │   ├── transitions.py        # Blending & transitions
-│   │   ├── temporal.py           # Time warps, speed effects
-│   │   ├── spatial.py            # Zoom, pan effects
-│   │   └── composer.py           # Effect chain composition
-│   ├── ml/
-│   │   ├── models.py             # ML model wrappers
-│   │   ├── extractors.py         # Feature extraction
-│   │   └── learner.py            # Adaptive learning
+├── src/
+│   ├── beat_sync/              # BPM detection and beat alignment
+│   │   ├── __init__.py
+│   │   ├── audio_analyzer.py   # Audio processing and BPM extraction
+│   │   └── beat_detector.py    # Beat position detection
+│   ├── visual_analysis/        # AI-powered visual metadata extraction
+│   │   ├── __init__.py
+│   │   ├── clip_analyzer.py    # Main visual analysis orchestrator
+│   │   ├── composition.py      # Shot scale and composition analysis
+│   │   ├── camera_movement.py  # Motion and camera tracking
+│   │   └── lighting_mood.py    # Lighting and mood classification
+│   ├── clip_selector/          # Smart clip selection engine
+│   │   ├── __init__.py
+│   │   ├── selector.py         # Main selection logic
+│   │   ├── repetition_avoider.py
+│   │   └── thematic_matcher.py # Match clips to music progression
+│   ├── timeline_generator/     # Beat-synced timeline creation
+│   │   ├── __init__.py
+│   │   └── generator.py        # Timeline orchestration
+│   ├── export/                 # Export functionality
+│   │   ├── __init__.py
+│   │   ├── json_exporter.py
+│   │   └── csv_exporter.py
+│   ├── core/                   # Main orchestration
+│   │   ├── __init__.py
+│   │   ├── project.py          # Project management
+│   │   ├── database.py         # Analysis history tracking
+│   │   └── pipeline.py         # Main processing pipeline
 │   └── utils/
-│       ├── logging.py
-│       ├── io.py
-│       └── validators.py
+│       ├── __init__.py
+│       ├── config.py           # Configuration management
+│       └── logger.py           # Logging utilities
+├── models/                     # Pre-trained ML models
+│   └── .gitkeep
+├── data/
+│   ├── clips/                  # Input video clips
+│   │   └── .gitkeep
+│   ├── audio/                  # Input audio files (MP3s)
+│   │   └── .gitkeep
+│   └── exports/                # Generated exports
+│       └── .gitkeep
 ├── tests/
-│   ├── unit/
-│   ├── integration/
-│   └── fixtures/
-├── examples/
-│   ├── basic_sync.py
-│   ├── advanced_effects.py
-│   └── batch_processing.py
-├── notebooks/
-│   ├── analysis.ipynb
-│   └── visualization.ipynb
-├── config/
-│   ├── default.yaml
-│   ├── hardware_profiles.yaml
-│   └── effect_presets.yaml
-├── requirements.txt
-├── requirements-dev.txt
-├── setup.py
-├── pyproject.toml
-├── Dockerfile
-├── docker-compose.yml
-├── .env.example
-└── docs/
-    ├── ARCHITECTURE.md
-    ├── SETUP.md
-    ├── API.md
-    └── EXAMPLES.md
+│   ├── __init__.py
+│   ├── test_audio_analyzer.py
+│   ├── test_visual_analysis.py
+│   └── test_timeline_generator.py
+├── config.yaml                 # Project configuration
+├── requirements.txt            # Python dependencies
+├── setup.py                    # Package setup
+└── README.md
 ```
 
-## 🚀 Quick Start
+## Installation
 
-### Installation
+### Requirements
+- Python 3.9+
+- FFmpeg
+- CUDA (optional, for GPU acceleration)
+
+### Setup
 
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/laaaberned/la.bat.ne.da.git
 cd la.bat.ne.da
 
@@ -121,98 +121,63 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Install FFmpeg
+# Ubuntu: sudo apt-get install ffmpeg
+# macOS: brew install ffmpeg
+# Windows: choco install ffmpeg
 ```
 
-### Basic Usage
+## Quick Start
 
 ```python
-from beat_sync_func import BeatSyncPipeline
-from beat_sync_func.core.config import Config
-
-# Load configuration
-config = Config.from_yaml('config/default.yaml')
+from src.core.pipeline import MusicVideoEditorPipeline
 
 # Initialize pipeline
-pipeline = BeatSyncPipeline(config)
+pipeline = MusicVideoEditorPipeline(config_path='config.yaml')
 
-# Process video
-output_video = pipeline.process(
-    music_path='path/to/song.mp3',
-    clip_pool_dir='path/to/clips/',
-    output_path='path/to/output.mp4'
+# Process music video
+result = pipeline.process(
+    audio_path='data/audio/song.mp3',
+    clips_dir='data/clips/',
+    output_dir='data/exports/'
 )
 
-print(f"✅ Video created: {output_video}")
+# Export results
+result.export_json('data/exports/timeline.json')
+result.export_csv('data/exports/metadata.csv')
 ```
 
-## 🔧 Technology Stack
+## Workflow
 
-### Core Processing
-- **OpenCV** (4.x+): Video processing, frame extraction, scene detection
-- **FFmpeg**: Audio/video encoding, effects rendering
-- **NumPy/SciPy**: Numerical computing, signal processing
+1. **Audio Analysis**: Extract BPM, beats, and lyrics timing from music file
+2. **Visual Analysis**: Analyze all available video clips for metadata (composition, movement, lighting)
+3. **Clip Selection**: Select clips for timeline based on creative logic and mood matching
+4. **Timeline Generation**: Create beat-synced sequence with smooth transitions
+5. **Export**: Generate JSON, CSV, and editable timeline formats
+6. **Review**: Check analysis history and re-run with different parameters if needed
 
-### Machine Learning
-- **PyTorch** (2.0+): Primary deep learning framework
-- **TensorFlow** (2.x, optional): Alternative ML backend
-- **Librosa**: Audio analysis library
+## Configuration
 
-### Audio Analysis
-- **Essentia**: Advanced audio feature extraction
-- **Aubio**: Real-time audio analysis
-- **pydub**: Audio manipulation
+Edit `config.yaml` to customize:
+- Audio analysis parameters
+- Visual analysis model settings
+- Timeline generation rules
+- Export formats
 
-### Legacy Hardware Support
-- **Scikit-learn**: Classical ML algorithms
-- **FANN (Fast Artificial Neural Network)**: Lightweight neural networks
-- **PocketSphinx**: Speech recognition for older systems
+## References
 
-## 📋 Requirements
+- **CutClaw**: https://github.com/GVCLab/CutClaw - Advanced video cutting techniques
+- **BeatSync-Engine**: https://github.com/Merserk/BeatSync-Engine - Beat synchronization engine
 
-### Minimum System Requirements
-- Python 3.8+
-- 4GB RAM (8GB recommended)
-- Multi-core processor
+## License
 
-### Advanced Features
-- GPU support: NVIDIA CUDA 11.8+ (optional, greatly improves performance)
+MIT License - See LICENSE file
 
-## 🧪 Testing
+## Contributing
 
-```bash
-# Run all tests
-pytest
-
-# Run with coverage
-pytest --cov=beat_sync_func
-
-# Run specific test suite
-pytest tests/unit/audio/
-```
-
-## 📚 Documentation
-
-- [Architecture Deep Dive](docs/ARCHITECTURE.md)
-- [Setup & Installation](docs/SETUP.md)
-- [API Reference](docs/API.md)
-- [Examples & Tutorials](docs/EXAMPLES.md)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## 📝 License
-
-MIT License - See [LICENSE](LICENSE) for details
-
-## 🙌 Credits & References
-
-- [BeatSync-Engine](https://github.com/Merserk/BeatSync-Engine)
-- [CutClaw](https://github.com/GVCLab/CutClaw)
-- OpenCV, PyTorch, Librosa communities
+Contributions welcome! Please open issues and pull requests.
 
 ---
 
-**Status**: 🚧 Early Development  
-**Last Updated**: 2026-06-10  
-**Author**: laaaberned
+**ART.WE.ED.IT** - Where AI meets creativity in music video production.

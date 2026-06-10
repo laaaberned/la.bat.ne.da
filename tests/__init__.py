@@ -1,1 +1,1 @@
-"""Test suite for BEAT SYNC FUNC."""
+"""Test suite for ART.WE.ED.IT"""
