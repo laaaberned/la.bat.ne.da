@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  beat-sync:
+    build: .
+    container_name: beat-sync-func
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+      - ./temp:/app/temp
+      - ./logs:/app/logs
+    environment:
+      - USE_GPU=false
+      - NUM_WORKERS=4
+      - DEBUG_MODE=false
+    # Uncomment for GPU support:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]

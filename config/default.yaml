@@ -1,0 +1,47 @@
+# BEAT SYNC FUNC - Default Configuration
+
+project_name: "BEAT SYNC FUNC"
+version: "0.1.0"
+
+# Audio Processing
+audio:
+  sample_rate: 44100
+  hop_length: 512
+  n_fft: 2048
+  beat_detector: "essentia"  # Options: essentia, librosa, aubio
+  spectral_bins: 128
+
+# Video Processing
+video:
+  fps: 30
+  resolution: [1920, 1080]
+  aspect_ratio: 1.777778  # 16:9
+  codec: "libx264"
+  quality: 23  # CRF 0-51, lower is better
+
+# Cutting/Director Engine
+cutter:
+  min_cut_duration: 0.5
+  max_cut_duration: 8.0
+  transition_duration: 0.3
+  pattern_library: "default"
+  adaptive_learning: true
+
+# Visual Effects
+effects:
+  enable_transitions: true
+  enable_time_warps: true
+  enable_zoom: true
+  enable_scratching: true
+  effect_intensity: 1.0  # 0.0 - 2.0
+  blend_mode: "crossfade"  # Options: crossfade, dissolve, wipe
+
+# Paths
+input_dir: "./input"
+output_dir: "./output"
+temp_dir: "./temp"
+
+# Processing
+num_workers: 4
+use_gpu: true
+debug_mode: false
