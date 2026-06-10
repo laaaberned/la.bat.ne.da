@@ -1,1 +1,1 @@
-"""Video cutting and timeline generation."""
+"""Cutter/Director module for timeline generation."""
